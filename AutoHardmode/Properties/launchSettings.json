@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AutoHardmode": {
+      "commandName": "Executable",
+      "executablePath": "D:\\临时\\新建文件夹\\TerrariaServer.exe"
+    }
+  }
+}
