@@ -34,7 +34,7 @@ namespace Plugin
         /// in the following sections,you will see how the plugin will work
         /// </summary>
         public static bool judger = false;
-        public static int countdown = 5;//345600
+        public static int countdown = 4;//96 hours == 4 days
         /// <summary>
         /// initialize 2 commands and no hook
         /// </summary>
@@ -67,7 +67,7 @@ namespace Plugin
             
             Timer WofCd = new Timer()
             {
-                Interval = 1000,
+                Interval = 86400000,//86400000ms=1 day
                 Enabled = true, 
                 AutoReset = false
             };
@@ -76,14 +76,7 @@ namespace Plugin
             WofCd.Elapsed += new ElapsedEventHandler(OntimedEvent);
             WofCd.Start();
 
-            while (countdown > 0)
-            {
-                WofCd.Start();
-                if (judger == true)
-                {
-                    break;
-                }
-            }
+          
 
         }
         
@@ -95,12 +88,7 @@ namespace Plugin
             }
             else if (countdown == 0)
             {
-                //@"../tshock/config.json" this is the relative path
-
-                //this section will capture the relative path of tshock and its config.json
-
-                //string pathTshock = new DirectoryInfo("../").FullName;
-                //string path = Path.Combine(pathTshock,@"tshock\config.json");
+              
                 string path = @"tshock\config.json";
 
                 string tempContent = File.ReadAllText(path);
@@ -128,7 +116,7 @@ namespace Plugin
         {
             if (judger == false)
             {
-                args.Player.SendSuccessMessage("剩余{0}秒解锁肉山,先别开袋子",countdown);
+                args.Player.SendSuccessMessage("剩余{0}天解锁肉山,先别开袋子",countdown);
             }
             else if (judger == true)
             {
