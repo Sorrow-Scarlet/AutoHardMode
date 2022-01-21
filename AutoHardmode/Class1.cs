@@ -34,7 +34,7 @@ namespace Plugin
         /// in the following sections,you will see how the plugin will work
         /// </summary>
         public static bool judger = false;
-        public static int countdown = 5;//345600
+        public static int countdown = 345600;
         /// <summary>
         /// initialize 2 commands and no hook
         /// </summary>
