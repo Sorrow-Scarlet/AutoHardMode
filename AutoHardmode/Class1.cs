@@ -86,7 +86,7 @@ namespace Plugin
             {
                 countdown--;
             }
-            else if (countdown == 0)
+            else if (countdown == 0 || countdown<= 0 )
             {
               
                 string path = @"tshock\config.json";
